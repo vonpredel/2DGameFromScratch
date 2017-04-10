@@ -34,7 +34,7 @@ public abstract class UIObject {
             hovering = false;
     }
 
-    public void onMouseRelase(MouseEvent e) {
+    public void onMouseRelease(MouseEvent e) {
         if(e.getButton() == MouseEvent.BUTTON1)
             if(hovering)
                 onClick();

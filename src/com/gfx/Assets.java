@@ -11,7 +11,7 @@ public class Assets {
     public static BufferedImage player,zombie, grass, dirt, tree, stone;
     public static BufferedImage[] player_down,player_up,player_left, player_right;
     public static BufferedImage[] zombie_down,zombie_up,zombie_left,zombie_right;
-    public static BufferedImage[] MenuBtn_start,MenuBtn_exit,MenuBtn_settings,MenuBtn_credits;
+    public static BufferedImage[] MenuBtn_start,MenuBtn_exit,MenuBtn_settings,MenuBtn_credits,Btn_back;
 
     public static void init() {
         SpriteSheet sheet = new SpriteSheet(ImageLoader.loadImage("/textures/sheet.png"));
@@ -33,6 +33,11 @@ public class Assets {
         MenuBtn_credits = new BufferedImage[2];
         MenuBtn_credits[0] = menuBtnSheet.crop(0,dlugosc*3,dlugosc*2,dlugosc);
         MenuBtn_credits[1] = menuBtnSheet.crop(dlugosc*2,dlugosc*3,dlugosc*2,dlugosc);
+
+        //Buttons
+        Btn_back = new BufferedImage[2];
+        Btn_back[0] = menuBtnSheet.crop(0,dlugosc*4,dlugosc*2,dlugosc);
+        Btn_back[1] = menuBtnSheet.crop(dlugosc*2,dlugosc*4,dlugosc*2,dlugosc);
 
         // Player
         player_down = new BufferedImage[2];
