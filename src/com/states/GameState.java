@@ -2,7 +2,6 @@ package com.states;
 
 import com.Handler;
 import com.entity.creatures.Player;
-import com.entity.statics.Tree;
 import com.worlds.World;
 
 import java.awt.*;

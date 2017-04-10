@@ -2,6 +2,7 @@ package com;
 
 import com.gfx.GameCamera;
 import com.input.KeyManager;
+import com.input.MouseManager;
 import com.worlds.World;
 
 
@@ -16,6 +17,10 @@ public class Handler {
 
     public KeyManager getKeyManager() {
         return game.getKeyManager();
+    }
+
+    public MouseManager getMouseManager() {
+        return game.getMouseManager();
     }
 
     public int getWidth() {

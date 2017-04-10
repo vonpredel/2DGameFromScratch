@@ -25,7 +25,7 @@ public class Player extends Creature {
         animDown = new Animation(500, Assets.player_down);
         animUp = new Animation(500, Assets.player_up);
         animLeft = new Animation(500, Assets.player_left);
-        animRight = new Animation(500, Assets.player_rigth);
+        animRight = new Animation(500, Assets.player_right);
     }
 
     @Override
