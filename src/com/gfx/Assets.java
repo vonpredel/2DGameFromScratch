@@ -8,9 +8,18 @@ public class Assets {
     private static final int width = 32, height = 32;
     private static final int dlugosc = 32;
 
-    public static BufferedImage player,zombie, grass, dirt, tree, stone;
+    // Charac
+    public static BufferedImage player, zombie;
+    // Tiles
+    public static BufferedImage grass, dirt, stone;
+    // Static Envi
+    public static BufferedImage tree, rock;
+
+    //Animation
     public static BufferedImage[] player_down,player_up,player_left, player_right;
     public static BufferedImage[] zombie_down,zombie_up,zombie_left,zombie_right;
+
+    // Buttons
     public static BufferedImage[] MenuBtn_start,MenuBtn_exit,MenuBtn_settings,MenuBtn_credits,Btn_back;
 
     public static void init() {
@@ -74,9 +83,11 @@ public class Assets {
         // Tiles
         grass = sheet.crop(0,0, dlugosc, dlugosc);
         dirt = sheet.crop(dlugosc,0, dlugosc, dlugosc);
-        tree = sheet.crop(dlugosc *3,0, dlugosc, dlugosc);
         stone = sheet.crop(dlugosc*2, 0, dlugosc, dlugosc);
 
+        //Enci
+        tree = sheet.crop(dlugosc *3,0, dlugosc, dlugosc);
+        rock = sheet.crop(dlugosc,dlugosc*3,dlugosc,dlugosc);
     }
 
 }

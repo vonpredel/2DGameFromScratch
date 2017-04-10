@@ -17,11 +17,17 @@ public class Tree extends StaticEntity {
         bounds.y = (int) (height / 1.5f);
         bounds.width = width - 46;
         bounds.height = (int) (height - height / 1.5f);
+
     }
 
 
     @Override
     public void tick() {
+
+    }
+
+    @Override
+    protected void die() {
 
     }
 
