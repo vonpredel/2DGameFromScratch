@@ -1,10 +1,7 @@
 package com.states;
 
-import com.Game;
 import com.Handler;
 import com.entity.creatures.Player;
-import com.gfx.Assets;
-import com.tiles.Tile;
 import com.worlds.World;
 
 import java.awt.*;
