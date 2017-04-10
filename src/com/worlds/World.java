@@ -4,6 +4,7 @@ import com.Handler;
 import com.entity.EntityManager;
 import com.entity.creatures.Player;
 import com.entity.statics.*;
+import com.items.ItemManager;
 import com.tiles.Tile;
 import com.util.Utils;
 
@@ -18,10 +19,14 @@ public class World {
     private int[][] tiles;
     //Entities
     private EntityManager entityManager;
+    //Item
+    private ItemManager itemManager;
 
     public World(Handler handler, String path) {
         this.handler = handler;
         entityManager = new EntityManager(handler,new Player(handler,100,100));
+        itemManager = new ItemManager(handler);
+
         entityManager.addEntity(new Tree(handler,112,250));
         entityManager.addEntity(new Tree(handler,112,550));
         entityManager.addEntity(new Tree(handler,112,400));
@@ -35,6 +40,7 @@ public class World {
     }
 
     public void tick() {
+        itemManager.tick();
         entityManager.tick();
     }
 
@@ -50,6 +56,8 @@ public class World {
                         ,(int)(y * Tile.TILE_HEIGHT - handler.getGameCamera().getyOffset()));
             }
         }
+        // Items
+        itemManager.render(g);
         //Entities
         entityManager.render(g);
     }
@@ -93,5 +101,21 @@ public class World {
 
     public EntityManager getEntityManager() {
         return entityManager;
+    }
+
+    public Handler getHandler() {
+        return handler;
+    }
+
+    public void setHandler(Handler handler) {
+        this.handler = handler;
+    }
+
+    public ItemManager getItemManager() {
+        return itemManager;
+    }
+
+    public void setItemManager(ItemManager itemManager) {
+        this.itemManager = itemManager;
     }
 }

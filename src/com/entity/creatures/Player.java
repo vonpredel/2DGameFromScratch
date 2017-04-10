@@ -123,7 +123,7 @@ public class Player extends Creature {
         //hitSprite TODO
 //        if(hit) {
 //            g.setColor(Color.red);
-//            Rectangle a = new Rectangle(target.getCollisionBounds(0,0);
+//            Rectangle a = new Rectangle(target.getCollisionBounds((int) (x - handler.getGameCamera().getxOffset()), (int) (y - handler.getGameCamera().getyOffset())));
 //            g.fillRect((int) a.getX(), (int) a.getY(), (int) a.getWidth(), (int) a.getHeight());
 //        }
 //         hitbox coloured byRED

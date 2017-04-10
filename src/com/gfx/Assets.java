@@ -14,6 +14,8 @@ public class Assets {
     public static BufferedImage grass, dirt, stone;
     // Static Envi
     public static BufferedImage tree, rock;
+    // Items
+    public static BufferedImage wood;
 
     //Animation
     public static BufferedImage[] player_down,player_up,player_left, player_right;
@@ -27,6 +29,7 @@ public class Assets {
         SpriteSheet playerSheet = new SpriteSheet(ImageLoader.loadImage("/textures/PlayerSheet.png"));
         SpriteSheet zombieSheet = new SpriteSheet(ImageLoader.loadImage("/textures/ZombieSheet.png"));
         SpriteSheet menuBtnSheet = new SpriteSheet(ImageLoader.loadImage("/textures/MenuButtons.png"));
+        SpriteSheet itemsSheet = new SpriteSheet(ImageLoader.loadImage("/textures/itemsSheet.png"));
 
 
         //MenuButtons
@@ -85,9 +88,12 @@ public class Assets {
         dirt = sheet.crop(dlugosc,0, dlugosc, dlugosc);
         stone = sheet.crop(dlugosc*2, 0, dlugosc, dlugosc);
 
-        //Enci
+        //Envi
         tree = sheet.crop(dlugosc *3,0, dlugosc, dlugosc);
         rock = sheet.crop(dlugosc,dlugosc*3,dlugosc,dlugosc);
+
+        //Items
+        wood = itemsSheet.crop(0,0,dlugosc,dlugosc);
     }
 
 }
