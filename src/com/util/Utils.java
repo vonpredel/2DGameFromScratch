@@ -4,9 +4,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
-/**
- * Created by OSTRa_000 on 4/9/2017.
- */
+
 public class Utils {
 
     public static String loadFileAsString(String path) {

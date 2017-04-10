@@ -3,9 +3,7 @@ package com.tiles;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 
-/**
- * Created by OSTRa_000 on 4/9/2017.
- */
+
 public class Tile {
 
     //STATIC STUFF

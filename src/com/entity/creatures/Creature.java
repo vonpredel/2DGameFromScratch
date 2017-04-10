@@ -5,9 +5,7 @@ import com.Handler;
 import com.entity.Entity;
 import com.tiles.Tile;
 
-/**
- * Created by OSTRa_000 on 4/9/2017.
- */
+
 public abstract class Creature extends Entity {
 
     public static final int DEFAULT_HEALTH = 10;

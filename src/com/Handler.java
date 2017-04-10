@@ -4,9 +4,7 @@ import com.gfx.GameCamera;
 import com.input.KeyManager;
 import com.worlds.World;
 
-/**
- * Created by OSTRa_000 on 4/9/2017.
- */
+
 public class Handler {
 
     private Game game;

@@ -2,9 +2,7 @@ package com.gfx;
 
 import java.awt.image.BufferedImage;
 
-/**
- * Created by OSTRa_000 on 4/8/2017.
- */
+
 public class SpriteSheet {
 
     private BufferedImage sheet;

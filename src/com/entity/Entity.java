@@ -5,9 +5,7 @@ import com.Handler;
 
 import java.awt.*;
 
-/**
- * Created by OSTRa_000 on 4/9/2017.
- */
+
 public abstract class Entity {
 
     protected Handler handler;

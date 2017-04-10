@@ -6,9 +6,7 @@ import com.util.Utils;
 
 import java.awt.*;
 
-/**
- * Created by OSTRa_000 on 4/9/2017.
- */
+
 public class World {
 
     private Handler handler;

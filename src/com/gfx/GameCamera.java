@@ -3,9 +3,7 @@ package com.gfx;
 import com.Game;
 import com.entity.Entity;
 
-/**
- * Created by OSTRa_000 on 4/9/2017.
- */
+
 public class GameCamera {
 
     private Game game;

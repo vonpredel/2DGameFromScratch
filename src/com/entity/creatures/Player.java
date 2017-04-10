@@ -6,9 +6,7 @@ import com.gfx.Assets;
 
 import java.awt.*;
 
-/**
- * Created by OSTRa_000 on 4/9/2017.
- */
+
 public class Player extends Creature {
 
     public Player(Handler handler, float x, float y) {
