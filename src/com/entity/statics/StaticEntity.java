@@ -1,8 +1,14 @@
 package com.entity.statics;
 
 
-public class StaticEntity {
+import com.Handler;
+import com.entity.Entity;
+
+public abstract class StaticEntity extends Entity {
+
+    public StaticEntity(Handler handler, float x, float y, int width, int height) {
+        super(handler, x, y, width, height);
+    }
 
 
-    
 }
