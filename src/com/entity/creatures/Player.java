@@ -4,6 +4,7 @@ import com.Handler;
 import com.entity.Entity;
 import com.gfx.Animation;
 import com.gfx.Assets;
+import com.inventory.Inventory;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
@@ -15,6 +16,9 @@ public class Player extends Creature {
     private Animation animDown,animUp,animLeft,animRight;
     //Attack timer
     private long lastAttackTimer, attackCooldown = 800, attackTimer = attackCooldown;
+    //Inventory
+    private Inventory inventory;
+
 //    private boolean hit = false;
 //    private Entity target;
 
@@ -31,6 +35,8 @@ public class Player extends Creature {
         animUp = new Animation(500, Assets.player_up);
         animLeft = new Animation(500, Assets.player_left);
         animRight = new Animation(500, Assets.player_right);
+
+        inventory = new Inventory(handler);
     }
 
     @Override
@@ -46,6 +52,8 @@ public class Player extends Creature {
         handler.getGameCamera().centerOnEntity(this);
         // Attack
         checkAttacks();
+        //Inventory
+        inventory.tick();
     }
 
     private void checkAttacks() {
@@ -133,6 +141,10 @@ public class Player extends Creature {
 
     }
 
+    public void postRender(Graphics g) {
+        inventory.render(g);
+    }
+
     private BufferedImage getCurrentAnimationFrame() {
         if(xMove < 0) {
             return animLeft.getCurrentFrame();
@@ -145,5 +157,15 @@ public class Player extends Creature {
         }else {
             return Assets.player;
         }
+    }
+
+    //GETTERS SETTERS
+
+    public Inventory getInventory() {
+        return inventory;
+    }
+
+    public void setInventory(Inventory inventory) {
+        this.inventory = inventory;
     }
 }

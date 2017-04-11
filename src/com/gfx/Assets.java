@@ -16,6 +16,8 @@ public class Assets {
     public static BufferedImage tree, rock;
     // Items
     public static BufferedImage wood;
+    // Inventory
+    public static BufferedImage inventoryScreen;
 
     //Animation
     public static BufferedImage[] player_down,player_up,player_left, player_right;
@@ -31,6 +33,7 @@ public class Assets {
         SpriteSheet menuBtnSheet = new SpriteSheet(ImageLoader.loadImage("/textures/MenuButtons.png"));
         SpriteSheet itemsSheet = new SpriteSheet(ImageLoader.loadImage("/textures/itemsSheet.png"));
 
+        inventoryScreen = ImageLoader.loadImage("/textures/inventoryScreen.png");
 
         //MenuButtons
         MenuBtn_start = new BufferedImage[2];
