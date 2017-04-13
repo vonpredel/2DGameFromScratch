@@ -28,6 +28,9 @@ public class Assets {
     public static BufferedImage[] player_down,player_up,player_left, player_right;
     public static BufferedImage[] zombie_down,zombie_up,zombie_left,zombie_right;
 
+    //AttackAnimation
+    public static BufferedImage[] attackAnimation;
+
     // Buttons
     public static BufferedImage[] MenuBtn_start,MenuBtn_exit,MenuBtn_settings,MenuBtn_credits,Btn_back;
 
@@ -40,6 +43,7 @@ public class Assets {
         SpriteSheet zombieSheet = new SpriteSheet(ImageLoader.loadImage("/textures/ZombieSheet.png"));
         SpriteSheet menuBtnSheet = new SpriteSheet(ImageLoader.loadImage("/textures/MenuButtons.png"));
         SpriteSheet itemsSheet = new SpriteSheet(ImageLoader.loadImage("/textures/itemsSheet.png"));
+        SpriteSheet attackSheet = new SpriteSheet(ImageLoader.loadImage("/textures/AttackAnimTibia.png"));
 
         inventoryScreen = ImageLoader.loadImage("/textures/inventoryScreen2.png");
 
@@ -105,6 +109,16 @@ public class Assets {
 
         //Items
         wood = itemsSheet.crop(0,0,dlugosc,dlugosc);
+
+        //AttackAnims
+        attackAnimation = new BufferedImage[7];
+        attackAnimation[0] = attackSheet.crop(0,0,dlugosc,dlugosc);
+        attackAnimation[1] = attackSheet.crop(dlugosc,0,dlugosc,dlugosc);
+        attackAnimation[2] = attackSheet.crop(dlugosc*2,0,dlugosc,dlugosc);
+        attackAnimation[3] = attackSheet.crop(dlugosc*3,0,dlugosc,dlugosc);
+        attackAnimation[4] = attackSheet.crop(0,dlugosc,dlugosc,dlugosc);
+        attackAnimation[5] = attackSheet.crop(dlugosc,dlugosc,dlugosc,dlugosc);
+        attackAnimation[6] = attackSheet.crop(dlugosc*2,dlugosc,dlugosc,dlugosc);
     }
 
 }

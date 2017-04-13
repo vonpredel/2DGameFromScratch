@@ -13,11 +13,17 @@ import java.awt.image.BufferedImage;
 public class Player extends Creature {
 
     //Animations
-    private Animation animDown,animUp,animLeft,animRight;
+    private Animation animDown,animUp,animLeft,animRight,animAttack;
     //Attack timer
     private long lastAttackTimer, attackCooldown = 800, attackTimer = attackCooldown;
     //Inventory
     private Inventory inventory;
+    private boolean attacking = false;
+
+    long animAttackTimer = System.currentTimeMillis();
+
+    //TESTING
+    private int targetX,targetY,targetWidth,targetHeight;
 
 
     public Player(Handler handler, float x, float y) {
@@ -33,6 +39,7 @@ public class Player extends Creature {
         animUp = new Animation(500, Assets.player_up);
         animLeft = new Animation(500, Assets.player_left);
         animRight = new Animation(500, Assets.player_right);
+        animAttack = new Animation(100,Assets.attackAnimation);
 
         inventory = new Inventory(handler);
     }
@@ -44,6 +51,7 @@ public class Player extends Creature {
         animUp.tick();
         animLeft.tick();
         animRight.tick();
+        animAttack.tick();
         //Movement
         getInput();
         move();
@@ -60,6 +68,8 @@ public class Player extends Creature {
         lastAttackTimer = System.currentTimeMillis();
         if(attackTimer < attackCooldown)
             return;
+
+        animAttackTimer = System.currentTimeMillis();
 
         Rectangle cb = getCollisionBounds(0,0);
         Rectangle ar = new Rectangle();
@@ -84,12 +94,21 @@ public class Player extends Creature {
         }
 
         attackTimer = 0;
+        attacking = true;
 
         for (Entity e : handler.getWorld().getEntityManager().getEntities()) {
             if(e.equals(this))
                 continue;
             if(e.getCollisionBounds(0,0).intersects(ar)) {
                 e.hurt(1);
+
+                ///Testing
+                targetX = (int)e.getX();
+                targetY = (int)e.getY();
+                targetWidth = e.getWidth();
+                targetHeight = e.getHeight();
+
+
                 System.out.println(e.getHealth());
                 return;
             }
@@ -125,12 +144,17 @@ public class Player extends Creature {
     @Override
     public void render(Graphics g) {
         g.drawImage(getCurrentAnimationFrame(), (int) (x - handler.getGameCamera().getxOffset()), (int) (y - handler.getGameCamera().getyOffset()), width, height, null);
-
-
     }
 
     public void postRender(Graphics g) {
         inventory.render(g);
+        if(attacking) {
+            g.drawImage(animAttack.getCurrentFrame(),(int) (targetX - handler.getGameCamera().getxOffset() + (targetWidth / 5 )), (int) (targetY - handler.getGameCamera().getyOffset() + (targetHeight / 3)),64,64,null);
+            long elapsedTime = System.currentTimeMillis() - animAttackTimer;
+            if(elapsedTime < 700)
+                return;
+            attacking = false;
+        }
     }
 
     private BufferedImage getCurrentAnimationFrame() {
