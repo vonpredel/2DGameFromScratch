@@ -18,7 +18,7 @@ public class SettingsState extends State {
         super(handler);
         uiManager = new UIManager(handler);
 
-        uiManager.addObject(new UIImageButton(32, 256, 128, 64, Assets.Btn_back, new ClickListener() {
+        uiManager.addObject(new UIImageButton(32, 400, 128, 64, Assets.Btn_back, new ClickListener() {
             @Override
             public void onClick() {
                 handler.getMouseManager().setUiManager(null);

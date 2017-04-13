@@ -1,12 +1,17 @@
 package com.gfx;
 
 
+import java.awt.*;
 import java.awt.image.BufferedImage;
 
 public class Assets {
 
     private static final int width = 32, height = 32;
     private static final int dlugosc = 32;
+
+    //Font
+    public static Font font28;
+    public static Font font42;
 
     // Charac
     public static BufferedImage player, zombie;
@@ -27,13 +32,16 @@ public class Assets {
     public static BufferedImage[] MenuBtn_start,MenuBtn_exit,MenuBtn_settings,MenuBtn_credits,Btn_back;
 
     public static void init() {
+        font28 = FontLoader.loadFont("res/fonts/initFont.ttf",28);
+        font42 = FontLoader.loadFont("res/fonts/initFont.ttf",42);
+
         SpriteSheet sheet = new SpriteSheet(ImageLoader.loadImage("/textures/sheet.png"));
         SpriteSheet playerSheet = new SpriteSheet(ImageLoader.loadImage("/textures/PlayerSheet.png"));
         SpriteSheet zombieSheet = new SpriteSheet(ImageLoader.loadImage("/textures/ZombieSheet.png"));
         SpriteSheet menuBtnSheet = new SpriteSheet(ImageLoader.loadImage("/textures/MenuButtons.png"));
         SpriteSheet itemsSheet = new SpriteSheet(ImageLoader.loadImage("/textures/itemsSheet.png"));
 
-        inventoryScreen = ImageLoader.loadImage("/textures/inventoryScreen.png");
+        inventoryScreen = ImageLoader.loadImage("/textures/inventoryScreen2.png");
 
         //MenuButtons
         MenuBtn_start = new BufferedImage[2];

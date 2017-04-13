@@ -3,6 +3,7 @@ package com.worlds;
 import com.Handler;
 import com.entity.EntityManager;
 import com.entity.creatures.Player;
+import com.entity.creatures.Zombie;
 import com.entity.statics.*;
 import com.items.ItemManager;
 import com.tiles.Tile;
@@ -32,6 +33,7 @@ public class World {
         entityManager.addEntity(new Tree(handler,112,400));
         entityManager.addEntity(new Rock(handler,168,300));
         entityManager.addEntity(new Rock(handler,64,64));
+        entityManager.addEntity(new Zombie(handler,1024,250));
 
         loadWorld(path);
 

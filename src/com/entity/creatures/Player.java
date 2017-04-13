@@ -19,8 +19,6 @@ public class Player extends Creature {
     //Inventory
     private Inventory inventory;
 
-//    private boolean hit = false;
-//    private Entity target;
 
     public Player(Handler handler, float x, float y) {
         super(handler,x, y,Creature.DEFAULT_CREATURE_WIDTH,Creature.DEFAULT_CREATURE_HEIGHT);
@@ -57,7 +55,6 @@ public class Player extends Creature {
     }
 
     private void checkAttacks() {
-//        hit = false;
 
         attackTimer += System.currentTimeMillis() - lastAttackTimer;
         lastAttackTimer = System.currentTimeMillis();
@@ -94,8 +91,6 @@ public class Player extends Creature {
             if(e.getCollisionBounds(0,0).intersects(ar)) {
                 e.hurt(1);
                 System.out.println(e.getHealth());
-//                hit = true;
-//                target = e;
                 return;
             }
         }
@@ -114,6 +109,9 @@ public class Player extends Creature {
         xMove = 0;
         yMove = 0;
 
+        if(inventory.isActive())
+            return;
+
         if(handler.getKeyManager().up)
             yMove = -speed;
         if(handler.getKeyManager().down)
@@ -128,16 +126,6 @@ public class Player extends Creature {
     public void render(Graphics g) {
         g.drawImage(getCurrentAnimationFrame(), (int) (x - handler.getGameCamera().getxOffset()), (int) (y - handler.getGameCamera().getyOffset()), width, height, null);
 
-        //hitSprite TODO
-//        if(hit) {
-//            g.setColor(Color.red);
-//            Rectangle a = new Rectangle(target.getCollisionBounds((int) (x - handler.getGameCamera().getxOffset()), (int) (y - handler.getGameCamera().getyOffset())));
-//            g.fillRect((int) a.getX(), (int) a.getY(), (int) a.getWidth(), (int) a.getHeight());
-//        }
-//         hitbox coloured byRED
-//        g.setColor(Color.red);
-//        g.fillRect((int) (x + bounds.x - handler.getGameCamera().getxOffset()),
-//                (int) (y + bounds.y - handler.getGameCamera().getyOffset()),bounds.width,bounds.height);
 
     }
 
@@ -158,6 +146,7 @@ public class Player extends Creature {
             return Assets.player;
         }
     }
+
 
     //GETTERS SETTERS
 

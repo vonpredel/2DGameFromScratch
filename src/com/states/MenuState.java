@@ -19,28 +19,28 @@ public class MenuState extends State {
 //        handler.getMouseManager().setUiManager(uiManager);
 
 
-        uiManager.addObject(new UIImageButton(256, 20, 128, 64, Assets.MenuBtn_start, new ClickListener() {
+        uiManager.addObject(new UIImageButton(256, 50, 128, 64, Assets.MenuBtn_start, new ClickListener() {
             @Override
             public void onClick() {
                 handler.getMouseManager().setUiManager(null);
                 State.setCurrentState(handler.getGame().gameState);
             }
         }));
-        uiManager.addObject(new UIImageButton(256, 100, 128, 64, Assets.MenuBtn_settings, new ClickListener() {
+        uiManager.addObject(new UIImageButton(256, 150, 128, 64, Assets.MenuBtn_settings, new ClickListener() {
             @Override
             public void onClick() {
                 State.setCurrentState(handler.getGame().settingsState);
                 handler.getMouseManager().setUiManager(null);
             }
         }));
-        uiManager.addObject(new UIImageButton(256, 180, 128, 64, Assets.MenuBtn_credits, new ClickListener() {
+        uiManager.addObject(new UIImageButton(256, 250, 128, 64, Assets.MenuBtn_credits, new ClickListener() {
             @Override
             public void onClick() {
                 State.setCurrentState(handler.getGame().creditsState);
                 handler.getMouseManager().setUiManager(null);
             }
         }));
-        uiManager.addObject(new UIImageButton(256, 260, 128, 64, Assets.MenuBtn_exit, new ClickListener() {
+        uiManager.addObject(new UIImageButton(256, 350, 128, 64, Assets.MenuBtn_exit, new ClickListener() {
             @Override
             public void onClick() {
                 handler.getMouseManager().setUiManager(null);
