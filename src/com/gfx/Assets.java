@@ -16,7 +16,7 @@ public class Assets {
     // Charac
     public static BufferedImage player, zombie;
     // Tiles
-    public static BufferedImage grass, dirt, stone;
+    public static BufferedImage grass, dirt, stone, water;
     // Static Envi
     public static BufferedImage tree, rock;
     // Items
@@ -38,12 +38,13 @@ public class Assets {
         font28 = FontLoader.loadFont("res/fonts/initFont.ttf",28);
         font42 = FontLoader.loadFont("res/fonts/initFont.ttf",42);
 
-        SpriteSheet sheet = new SpriteSheet(ImageLoader.loadImage("/textures/sheet.png"));
+        SpriteSheet tilesSheet = new SpriteSheet(ImageLoader.loadImage("/textures/tilesSheet.png"));
         SpriteSheet playerSheet = new SpriteSheet(ImageLoader.loadImage("/textures/PlayerSheet.png"));
         SpriteSheet zombieSheet = new SpriteSheet(ImageLoader.loadImage("/textures/ZombieSheet.png"));
         SpriteSheet menuBtnSheet = new SpriteSheet(ImageLoader.loadImage("/textures/MenuButtons.png"));
         SpriteSheet itemsSheet = new SpriteSheet(ImageLoader.loadImage("/textures/itemsSheet.png"));
         SpriteSheet attackSheet = new SpriteSheet(ImageLoader.loadImage("/textures/AttackAnimTibia.png"));
+        SpriteSheet enviSheet = new SpriteSheet(ImageLoader.loadImage("/textures/EnviSheet.png"));
 
         inventoryScreen = ImageLoader.loadImage("/textures/inventoryScreen2.png");
 
@@ -99,13 +100,14 @@ public class Assets {
         zombie_left[1] = zombieSheet.crop(dlugosc*3,dlugosc,dlugosc,dlugosc);
 
         // Tiles
-        grass = sheet.crop(0,0, dlugosc, dlugosc);
-        dirt = sheet.crop(dlugosc,0, dlugosc, dlugosc);
-        stone = sheet.crop(dlugosc*2, 0, dlugosc, dlugosc);
+        grass = tilesSheet.crop(0,0, dlugosc, dlugosc);
+        dirt = tilesSheet.crop(dlugosc,0, dlugosc, dlugosc);
+        stone = tilesSheet.crop(dlugosc*2, 0, dlugosc, dlugosc);
+        water = tilesSheet.crop(dlugosc*3,0,dlugosc,dlugosc);
 
         //Envi
-        tree = sheet.crop(dlugosc *3,0, dlugosc, dlugosc);
-        rock = sheet.crop(dlugosc,dlugosc*3,dlugosc,dlugosc);
+        tree = enviSheet.crop(dlugosc,0, dlugosc, dlugosc);
+        rock = enviSheet.crop(0,0,dlugosc,dlugosc);
 
         //Items
         wood = itemsSheet.crop(0,0,dlugosc,dlugosc);

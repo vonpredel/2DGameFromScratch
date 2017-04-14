@@ -35,6 +35,12 @@ public class World {
         entityManager.addEntity(new Rock(handler,64,64));
         entityManager.addEntity(new Zombie(handler,1024,250));
 
+        //TEST
+        Zombie zombie = new Zombie(handler,1024,320);
+        zombie.setSpeed(1);
+        entityManager.addEntity(zombie);
+        //TEST
+
         loadWorld(path);
 
         entityManager.getPlayer().setX(spawnX);
