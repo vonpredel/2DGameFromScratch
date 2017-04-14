@@ -4,6 +4,7 @@ import com.Handler;
 import com.entity.Entity;
 import com.gfx.Animation;
 import com.gfx.Assets;
+import com.gfx.Text;
 import com.inventory.Inventory;
 
 import java.awt.*;
@@ -100,7 +101,7 @@ public class Player extends Creature {
             if(e.equals(this))
                 continue;
             if(e.getCollisionBounds(0,0).intersects(ar)) {
-                e.hurt(1);
+                e.hurt(getDamage());
 
                 ///Testing
                 targetX = (int)e.getX();
@@ -148,12 +149,24 @@ public class Player extends Creature {
 
     public void postRender(Graphics g) {
         inventory.render(g);
+        attackAnimation(g);
+    }
+
+    private void attackAnimation(Graphics g) {
         if(attacking) {
-            g.drawImage(animAttack.getCurrentFrame(),(int) (targetX - handler.getGameCamera().getxOffset() + (targetWidth / 5 )), (int) (targetY - handler.getGameCamera().getyOffset() + (targetHeight / 3)),64,64,null);
+            if(targetHeight > 64) {
+                targetHeight -= 64;
+            }
+            g.drawImage(animAttack.getCurrentFrame(),(int) (targetX - handler.getGameCamera().getxOffset()) + (targetWidth/4), (int) (targetY - handler.getGameCamera().getyOffset()) + (targetHeight/4),32,32,null);
+            Text.drawString(g,String.valueOf(getDamage()),(int) (targetX - handler.getGameCamera().getxOffset() + (targetWidth /2)), (int) (targetY - handler.getGameCamera().getyOffset() + (targetHeight /2)),true,Color.RED, Assets.font28);
             long elapsedTime = System.currentTimeMillis() - animAttackTimer;
-            if(elapsedTime < 700)
+            if(elapsedTime < 500)
                 return;
             attacking = false;
+            targetX = -100;
+            targetY = -100;
+            targetWidth = -100;
+            targetHeight = -100;
         }
     }
 

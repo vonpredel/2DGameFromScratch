@@ -1,6 +1,5 @@
 package com.entity.creatures;
 
-import com.Game;
 import com.Handler;
 import com.entity.Entity;
 import com.tiles.Tile;
@@ -12,13 +11,16 @@ public abstract class Creature extends Entity {
     public static final float DEFAULT_SPEED = 3.0f;
     public static final int DEFAULT_CREATURE_WIDTH = 64,
                             DEFAULT_CREATURE_HEIGHT = 64;
+    public static final int DEFAULT_DAMAGE = 1;
 
 
     protected float speed;
+    protected int damage;
     protected float xMove, yMove;
 
     public Creature(Handler handler, float x, float y, int width, int height) {
         super(handler, x, y, width, height);
+        damage = DEFAULT_DAMAGE;
         speed = DEFAULT_SPEED;
         xMove = 0;
         yMove = 0;
@@ -111,5 +113,13 @@ public abstract class Creature extends Entity {
 
     public void setyMove(float yMove) {
         this.yMove = yMove;
+    }
+
+    public int getDamage() {
+        return damage;
+    }
+
+    public void setDamage(int damage) {
+        this.damage = damage;
     }
 }
