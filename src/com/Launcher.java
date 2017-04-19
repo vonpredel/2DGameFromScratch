@@ -7,12 +7,5 @@ public class Launcher {
         Game game = new Game("Title!",640,480);
         game.start();
 
-
-
     }
-
-
-
-
-
 }

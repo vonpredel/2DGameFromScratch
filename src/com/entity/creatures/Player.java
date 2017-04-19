@@ -109,8 +109,6 @@ public class Player extends Creature {
                 targetWidth = e.getWidth();
                 targetHeight = e.getHeight();
 
-
-                System.out.println(e.getHealth());
                 return;
             }
         }

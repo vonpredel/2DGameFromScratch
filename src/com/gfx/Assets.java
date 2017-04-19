@@ -20,7 +20,7 @@ public class Assets {
     // Static Envi
     public static BufferedImage tree, rock;
     // Items
-    public static BufferedImage wood;
+    public static BufferedImage wood, gold;
     // Inventory
     public static BufferedImage inventoryScreen;
 
@@ -111,6 +111,7 @@ public class Assets {
 
         //Items
         wood = itemsSheet.crop(0,0,dlugosc,dlugosc);
+        gold = itemsSheet.crop(dlugosc,0,dlugosc,dlugosc);
 
         //AttackAnims
         attackAnimation = new BufferedImage[7];
