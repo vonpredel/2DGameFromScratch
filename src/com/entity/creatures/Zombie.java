@@ -11,6 +11,7 @@ import java.awt.image.BufferedImage;
 /**
  * Created by Rafal Predel on 4/13/2017.
  */
+
 public class Zombie extends Creature {
 
     //Animations

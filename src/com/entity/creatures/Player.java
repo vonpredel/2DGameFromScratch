@@ -43,6 +43,10 @@ public class Player extends Creature {
         animAttack = new Animation(100,Assets.attackAnimation);
 
         inventory = new Inventory(handler);
+
+        // Test
+        setCurrentHealth(5);
+        setMaxHealth(5);
     }
 
     @Override

@@ -1,6 +1,5 @@
 package com.entity;
 
-import com.Game;
 import com.Handler;
 
 import java.awt.*;
@@ -12,7 +11,7 @@ public abstract class Entity {
     protected Handler handler;
     protected float x, y;
     protected int width, height;
-    protected int health;
+    protected int currentHealth,maxHealth;
     protected boolean active = true;
     protected Rectangle bounds;
 
@@ -22,7 +21,8 @@ public abstract class Entity {
         this.y = y;
         this.width = width;
         this.height = height;
-        health = DEFAULT_HEALTH;
+        currentHealth = DEFAULT_HEALTH;
+        maxHealth = DEFAULT_HEALTH;
 
         bounds = new Rectangle(0,0,width,height);
     }
@@ -33,8 +33,8 @@ public abstract class Entity {
     protected abstract void die();
 
     public void hurt(int amt) {
-        health -= amt;
-        if(health <= 0) {
+        currentHealth -= amt;
+        if(currentHealth <= 0) {
             active = false;
             die();
         }
@@ -87,12 +87,12 @@ public abstract class Entity {
         this.height = height;
     }
 
-    public int getHealth() {
-        return health;
+    public int getCurrentHealth() {
+        return currentHealth;
     }
 
-    public void setHealth(int health) {
-        this.health = health;
+    public void setCurrentHealth(int currentHealth) {
+        this.currentHealth = currentHealth;
     }
 
     public boolean isActive() {
@@ -101,5 +101,13 @@ public abstract class Entity {
 
     public void setActive(boolean active) {
         this.active = active;
+    }
+
+    public int getMaxHealth() {
+        return maxHealth;
+    }
+
+    public void setMaxHealth(int maxHealth) {
+        this.maxHealth = maxHealth;
     }
 }

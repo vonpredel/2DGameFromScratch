@@ -12,6 +12,7 @@ public class Assets {
     //Font
     public static Font font28;
     public static Font font42;
+    public static Font font18;
 
     // Charac
     public static BufferedImage player, zombie;
@@ -35,6 +36,7 @@ public class Assets {
     public static BufferedImage[] MenuBtn_start,MenuBtn_exit,MenuBtn_settings,MenuBtn_credits,Btn_back;
 
     public static void init() {
+        font18 = FontLoader.loadFont("res/fonts/initFont.ttf",18);
         font28 = FontLoader.loadFont("res/fonts/initFont.ttf",28);
         font42 = FontLoader.loadFont("res/fonts/initFont.ttf",42);
 

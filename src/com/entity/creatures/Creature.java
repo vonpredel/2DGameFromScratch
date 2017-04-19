@@ -83,12 +83,12 @@ public abstract class Creature extends Entity {
 
     //GETTERS SETTERS
 
-    public int getHealth() {
-        return health;
+    public int getCurrentHealth() {
+        return currentHealth;
     }
 
-    public void setHealth(int health) {
-        this.health = health;
+    public void setCurrentHealth(int currentHealth) {
+        this.currentHealth = currentHealth;
     }
 
     public float getSpeed() {
