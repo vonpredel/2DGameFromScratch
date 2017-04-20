@@ -13,6 +13,7 @@ public class Tile {
     public static Tile dirtTile = new DirtTile(1);
     public static Tile stoneTile = new StoneTile(2);
     public static Tile waterTile = new WaterTile(3);
+    public static Tile spikesTile = new SpikesTile(4);
 
 
     //CLASS
@@ -38,6 +39,10 @@ public class Tile {
     }
 
     public boolean isSolid() {
+        return false;
+    }
+
+    public boolean isDamagingTile() {
         return false;
     }
 

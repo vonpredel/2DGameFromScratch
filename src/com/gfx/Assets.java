@@ -17,7 +17,7 @@ public class Assets {
     // Charac
     public static BufferedImage player, zombie;
     // Tiles
-    public static BufferedImage grass, dirt, stone, water;
+    public static BufferedImage grass, dirt, stone, water, spikes;
     // Static Envi
     public static BufferedImage tree, rock;
     // Items
@@ -106,6 +106,7 @@ public class Assets {
         dirt = tilesSheet.crop(dlugosc,0, dlugosc, dlugosc);
         stone = tilesSheet.crop(dlugosc*2, 0, dlugosc, dlugosc);
         water = tilesSheet.crop(dlugosc*3,0,dlugosc,dlugosc);
+        spikes = tilesSheet.crop(0,dlugosc*1,dlugosc,dlugosc);
 
         //Envi
         tree = enviSheet.crop(dlugosc,0, dlugosc, dlugosc);

@@ -36,6 +36,15 @@ public abstract class Creature extends Entity {
     public void moveX() {
         if (xMove > 0) { //Moving rigth
             int tx = (int) (x + xMove + bounds.x + bounds.width) / Tile.TILE_WIDTH;
+
+            ////////////////////
+            // TEMPORARY CODE // EACH ONE OF THIS FOUR IFS ARE GOING TO DELETE !!!
+            ////////////////////
+            if(onDamagingTile(tx, (int) (y + bounds.y) / Tile.TILE_HEIGHT) ||
+                    onDamagingTile(tx, (int) (y + bounds.y + bounds.height) / Tile.TILE_HEIGHT)) {
+                setCurrentHealth(getCurrentHealth()-1);
+            }
+
             if(!collisionWithTile(tx, (int) (y + bounds.y) / Tile.TILE_HEIGHT) &&
                     !collisionWithTile(tx, (int) (y + bounds.y + bounds.height) / Tile.TILE_HEIGHT)) {
                 x += xMove;
@@ -45,6 +54,15 @@ public abstract class Creature extends Entity {
 
         }else if (xMove < 0) { //Moving left
             int tx = (int) (x + xMove + bounds.x) / Tile.TILE_WIDTH;
+
+            ////////////////////
+            // TEMPORARY CODE // EACH ONE OF THIS FOUR IFS ARE GOING TO DELETE !!!
+            ////////////////////
+            if(onDamagingTile(tx, (int) (y + bounds.y) / Tile.TILE_HEIGHT) ||
+                    onDamagingTile(tx, (int) (y + bounds.y + bounds.height) / Tile.TILE_HEIGHT)) {
+                setCurrentHealth(getCurrentHealth()-1);
+            }
+
             if(!collisionWithTile(tx, (int) (y + bounds.y) / Tile.TILE_HEIGHT) &&
                     !collisionWithTile(tx, (int) (y + bounds.y + bounds.height) / Tile.TILE_HEIGHT)) {
                 x += xMove;
@@ -58,6 +76,15 @@ public abstract class Creature extends Entity {
         if(yMove < 0) { // Moving Up
             int ty = (int) (y + yMove + bounds.y) / Tile.TILE_HEIGHT;
 
+
+            ////////////////////
+            // TEMPORARY CODE // EACH ONE OF THIS FOUR IFS ARE GOING TO DELETE !!!
+            ////////////////////
+            if(onDamagingTile((int) (x + bounds.x) / Tile.TILE_WIDTH, ty) ||
+                    onDamagingTile((int) (x + bounds.x + bounds.width) / Tile.TILE_WIDTH, ty)) {
+                setCurrentHealth(getCurrentHealth()-1);
+            }
+
             if(!collisionWithTile((int) (x + bounds.x) / Tile.TILE_WIDTH, ty) &&
                     !collisionWithTile((int) (x + bounds.x + bounds.width) / Tile.TILE_WIDTH, ty)) {
                 y += yMove;
@@ -67,6 +94,15 @@ public abstract class Creature extends Entity {
 
         }else if (yMove > 0) { // Moving Down
             int ty = (int) (y + yMove + bounds.y + bounds.height) / Tile.TILE_HEIGHT;
+
+
+            ////////////////////
+            // TEMPORARY CODE // EACH ONE OF THIS FOUR IFS ARE GOING TO DELETE !!!
+            ////////////////////
+            if(onDamagingTile((int) (x + bounds.x) / Tile.TILE_WIDTH, ty) ||
+                    onDamagingTile((int) (x + bounds.x + bounds.width) / Tile.TILE_WIDTH, ty)) {
+                setCurrentHealth(getCurrentHealth()-1);
+            }
 
             if(!collisionWithTile((int) (x + bounds.x) / Tile.TILE_WIDTH, ty) &&
                     !collisionWithTile((int) (x + bounds.x + bounds.width) / Tile.TILE_WIDTH, ty)) {
@@ -79,6 +115,9 @@ public abstract class Creature extends Entity {
 
     protected boolean collisionWithTile(int x, int y) {
         return handler.getWorld().getTile(x,y).isSolid();
+    }
+    protected boolean onDamagingTile(int x, int y) {
+        return handler.getWorld().getTile(x,y).isDamagingTile();
     }
 
     //GETTERS SETTERS

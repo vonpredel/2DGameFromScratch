@@ -45,8 +45,8 @@ public class Player extends Creature {
         inventory = new Inventory(handler);
 
         // Test
-        setCurrentHealth(5);
-        setMaxHealth(5);
+        setCurrentHealth(100);
+        setMaxHealth(100);
     }
 
     @Override
@@ -116,9 +116,6 @@ public class Player extends Creature {
                 return;
             }
         }
-
-
-
     }
 
 
