@@ -13,9 +13,10 @@ public class Assets {
     public static Font font28;
     public static Font font42;
     public static Font font18;
+    public static Font font72;
 
     // Charac
-    public static BufferedImage player, zombie;
+    public static BufferedImage player,player_dead,zombie;
     // Tiles
     public static BufferedImage grass, dirt, stone, water, spikes;
     // Static Envi
@@ -39,6 +40,7 @@ public class Assets {
         font18 = FontLoader.loadFont("res/fonts/initFont.ttf",18);
         font28 = FontLoader.loadFont("res/fonts/initFont.ttf",28);
         font42 = FontLoader.loadFont("res/fonts/initFont.ttf",42);
+        font72 = FontLoader.loadFont("res/fonts/initFont.ttf",72);
 
         SpriteSheet tilesSheet = new SpriteSheet(ImageLoader.loadImage("/textures/tilesSheet.png"));
         SpriteSheet playerSheet = new SpriteSheet(ImageLoader.loadImage("/textures/PlayerSheet.png"));
@@ -84,6 +86,7 @@ public class Assets {
         player_right[1] = playerSheet.crop(dlugosc,dlugosc,dlugosc,dlugosc);
         player_left[0] = playerSheet.crop(dlugosc*2,dlugosc,dlugosc,dlugosc);
         player_left[1] = playerSheet.crop(dlugosc*3,dlugosc,dlugosc,dlugosc);
+        player_dead = playerSheet.crop(dlugosc,dlugosc*2,dlugosc,dlugosc);
 
         // Zombie
         zombie_down = new BufferedImage[2];

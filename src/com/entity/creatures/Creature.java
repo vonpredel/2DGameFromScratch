@@ -42,7 +42,8 @@ public abstract class Creature extends Entity {
             ////////////////////
             if(onDamagingTile(tx, (int) (y + bounds.y) / Tile.TILE_HEIGHT) ||
                     onDamagingTile(tx, (int) (y + bounds.y + bounds.height) / Tile.TILE_HEIGHT)) {
-                setCurrentHealth(getCurrentHealth()-1);
+//                setCurrentHealth(getCurrentHealth()-1);
+                hurt(1);
             }
 
             if(!collisionWithTile(tx, (int) (y + bounds.y) / Tile.TILE_HEIGHT) &&
@@ -60,7 +61,8 @@ public abstract class Creature extends Entity {
             ////////////////////
             if(onDamagingTile(tx, (int) (y + bounds.y) / Tile.TILE_HEIGHT) ||
                     onDamagingTile(tx, (int) (y + bounds.y + bounds.height) / Tile.TILE_HEIGHT)) {
-                setCurrentHealth(getCurrentHealth()-1);
+//                setCurrentHealth(getCurrentHealth()-1);
+                hurt(1);
             }
 
             if(!collisionWithTile(tx, (int) (y + bounds.y) / Tile.TILE_HEIGHT) &&
@@ -82,7 +84,8 @@ public abstract class Creature extends Entity {
             ////////////////////
             if(onDamagingTile((int) (x + bounds.x) / Tile.TILE_WIDTH, ty) ||
                     onDamagingTile((int) (x + bounds.x + bounds.width) / Tile.TILE_WIDTH, ty)) {
-                setCurrentHealth(getCurrentHealth()-1);
+//                setCurrentHealth(getCurrentHealth()-1);
+                hurt(1);
             }
 
             if(!collisionWithTile((int) (x + bounds.x) / Tile.TILE_WIDTH, ty) &&
@@ -101,7 +104,8 @@ public abstract class Creature extends Entity {
             ////////////////////
             if(onDamagingTile((int) (x + bounds.x) / Tile.TILE_WIDTH, ty) ||
                     onDamagingTile((int) (x + bounds.x + bounds.width) / Tile.TILE_WIDTH, ty)) {
-                setCurrentHealth(getCurrentHealth()-1);
+//                setCurrentHealth(getCurrentHealth()-1);
+                hurt(1);
             }
 
             if(!collisionWithTile((int) (x + bounds.x) / Tile.TILE_WIDTH, ty) &&

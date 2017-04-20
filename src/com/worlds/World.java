@@ -36,7 +36,7 @@ public class World {
         entityManager.addEntity(new Zombie(handler,1024,250));
 
         //TEST
-        Zombie zombie = new Zombie(handler,1024,320);
+        Zombie zombie = new Zombie(handler,1024,180);
         zombie.setSpeed(1);
         entityManager.addEntity(zombie);
         //TEST

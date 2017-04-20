@@ -26,6 +26,9 @@ public class Player extends Creature {
     //TESTING
     private int targetX,targetY,targetWidth,targetHeight;
 
+    //TESTING
+    private boolean isDead = false;
+
 
     public Player(Handler handler, float x, float y) {
         super(handler,x, y,Creature.DEFAULT_CREATURE_WIDTH,Creature.DEFAULT_CREATURE_HEIGHT);
@@ -121,7 +124,7 @@ public class Player extends Creature {
 
     @Override
     protected void die() {
-        System.out.println("You loose !");
+        isDead = true;
     }
 
     public void getInput() {
@@ -147,6 +150,12 @@ public class Player extends Creature {
     }
 
     public void postRender(Graphics g) {
+        if (isDead) {
+            g.drawImage(Assets.player_dead,(int) (x - handler.getGameCamera().getxOffset()), (int) (y - handler.getGameCamera().getyOffset()),64,64,null);
+//            g.setColor(Color.green);
+//            g.fillRect((int)x,(int)y,64,64);
+            Text.drawString(g,"YOU'RE DEAD",handler.getWidth()/2,handler.getHeight()/3,true,Color.red,Assets.font72);
+        }
         inventory.render(g);
         attackAnimation(g);
     }
@@ -170,6 +179,7 @@ public class Player extends Creature {
     }
 
     private BufferedImage getCurrentAnimationFrame() {
+
         if(xMove < 0) {
             return animLeft.getCurrentFrame();
         }else if(xMove > 0) {
