@@ -20,7 +20,7 @@ public class Assets {
     // Tiles
     public static BufferedImage grass, dirt, stone, water, spikes;
     // Static Envi
-    public static BufferedImage tree, rock;
+    public static BufferedImage tree, rock, chest;
     // Items
     public static BufferedImage wood, gold;
     // Inventory
@@ -114,6 +114,8 @@ public class Assets {
         //Envi
         tree = enviSheet.crop(dlugosc,0, dlugosc, dlugosc);
         rock = enviSheet.crop(0,0,dlugosc,dlugosc);
+        chest = enviSheet.crop(dlugosc*2,0,dlugosc,dlugosc);
+
 
         //Items
         wood = itemsSheet.crop(0,0,dlugosc,dlugosc);

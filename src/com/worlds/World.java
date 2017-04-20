@@ -33,6 +33,7 @@ public class World {
         entityManager.addEntity(new Tree(handler,112,400));
         entityManager.addEntity(new Rock(handler,168,300));
         entityManager.addEntity(new Rock(handler,64,64));
+        entityManager.addEntity(new Chest(handler,500,96));
         entityManager.addEntity(new Zombie(handler,1024,250));
 
         //TEST
