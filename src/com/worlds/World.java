@@ -34,6 +34,13 @@ public class World {
         entityManager.addEntity(new Rock(handler,168,300));
         entityManager.addEntity(new Rock(handler,64,64));
         entityManager.addEntity(new Chest(handler,500,96));
+        entityManager.addEntity(new Chest(handler,1000,800));
+        entityManager.addEntity(new Chest(handler,1000,700));
+        entityManager.addEntity(new Chest(handler,1100,800));
+        entityManager.addEntity(new Chest(handler,1100,700));
+        entityManager.addEntity(new Rock(handler,900,750));
+        entityManager.addEntity(new Rock(handler,925,770));
+        entityManager.addEntity(new Rock(handler,890,760));
         entityManager.addEntity(new Zombie(handler,1024,250));
 
         //TEST
